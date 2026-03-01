@@ -5,7 +5,7 @@ import { useElevatorAudio } from './hooks/useElevatorAudio';
 import { ElevatorDoors } from './components/ElevatorDoors';
 import { FloorIndicator } from './components/FloorIndicator';
 import { ControlPanel } from './components/ControlPanel';
-import { ArrowLeft, Star, Settings, Book, Lock } from 'lucide-react';
+import { ArrowLeft, Star, Settings, Book } from 'lucide-react';
 
 // Types
 type GameMode = 'menu' | 'free' | 'job' | 'adventure';
@@ -186,17 +186,15 @@ export default function App() {
         </button>
 
         <button 
-          className="bg-zinc-100 border-4 border-zinc-300 p-6 rounded-2xl shadow-inner flex items-center gap-4 opacity-70 cursor-not-allowed relative overflow-hidden"
+          onClick={() => { setMode('adventure'); speak('ぼうけんモード'); }}
+          className="bg-white border-4 border-purple-400 p-6 rounded-2xl shadow-md flex items-center gap-4 hover:bg-purple-50 transition-colors group"
         >
-          <div className="absolute inset-0 bg-white/50 flex items-center justify-center z-10">
-            <Lock className="text-zinc-400 w-8 h-8" />
-          </div>
-          <div className="bg-purple-100 p-3 rounded-full">
+          <div className="bg-purple-100 p-3 rounded-full group-hover:scale-110 transition-transform">
             <Book className="text-purple-600 w-8 h-8" />
           </div>
           <div className="text-left">
             <h3 className="text-xl font-bold text-zinc-800">ぼうけんモード</h3>
-            <p className="text-sm text-zinc-500">（ゆうりょう）</p>
+            <p className="text-sm text-zinc-500">ミッションにちょうせん</p>
           </div>
         </button>
       </div>
