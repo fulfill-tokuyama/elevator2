@@ -227,10 +227,10 @@ export default function App() {
         </div>
       )}
 
-      {/* Top Half: Elevator View */}
-      <div className="flex-1 relative bg-zinc-800 flex flex-col items-center">
+      {/* Top: Elevator View (expands to fill available space) */}
+      <div className="flex-1 relative bg-zinc-800 flex flex-col items-center min-h-0">
         {/* Floor Indicator */}
-        <div className="mt-8 w-full z-30">
+        <div className="mt-4 w-full z-30">
           <FloorIndicator floor={elevator.currentFloor} direction={elevator.direction} />
         </div>
 
@@ -261,8 +261,8 @@ export default function App() {
         </div>
       </div>
 
-      {/* Bottom Half: Controls */}
-      <div className="h-1/2 z-40">
+      {/* Bottom: Controls (compact, auto-sized) */}
+      <div className="shrink-0 z-40">
         <ControlPanel 
           currentFloor={elevator.currentFloor}
           doorState={elevator.doorState}
